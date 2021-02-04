@@ -8,7 +8,7 @@ def main():
     for i in range(NUM_ANIMALS):
         animal = dict()
         animal["head"] = random.choice(HEADS)
-        animal["body"] = petname.generate()
+        animal["body"] = petname.name() + "-" + petname.name()
         animal["arms"] = random.randint(1,5)*2
         animal["legs"] = random.randint(1,4)*3
         animal["tail"] = animal["arms"] + animal["legs"]
