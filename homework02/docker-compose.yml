@@ -1,0 +1,16 @@
+---
+version: "3"
+
+services:
+    gen-anim:
+        image: harrijin/json-parser:1.0
+        volumes:
+            - ./animals:/data
+        user: "869722:816966"
+        command: generate_animals.py /data/animals.json
+    read-anim:
+        image: harrijin/json-parser:1.0
+        volumes:
+            - ./animals:/data
+        user: "869722:816966"
+        command: read_animals.py /data/animals.json
