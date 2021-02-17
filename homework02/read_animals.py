@@ -4,10 +4,9 @@ import json, random, sys
 def generate_id(animal: dict):
     """Generate a unique id of the form 'hbb##aall' for a given animal
         -'h': the third letter of the head
-        -'bb##': the first letter of each of the two animals followed by the total length of the body
-        -'aa': number of arms divided by 2
-        -'ll': number of legs divided by 3
-        All numbers will have leading zeros if single digit
+        -'bb##': the first letter of each of the two animals followed by the total length of the body (with a leading zero if necessary)
+        -'a': number of arms divided by 2
+        -'l': number of legs divided by 3
     """
     assert isinstance(animal, dict), "Input to this function should be a dict"
     keys = animal.keys
