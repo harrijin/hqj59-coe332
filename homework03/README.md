@@ -21,7 +21,9 @@ curl localhost:<port>/<path>
 
 where port is the port entered in the `docker run` command and path is the API path (see below).
 
-## API Paths and parameters
+## API paths and parameters
+
+All paths return in JSON format
 
 Paths:
 
