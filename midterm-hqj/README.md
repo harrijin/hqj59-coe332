@@ -21,7 +21,7 @@ Routes:
     /loadAnimals - Load default animals (found in animals.json)
     /numAnimals - Returns total number of animals
     /animal/<uid> - Returns animal with corresponding uid
-    /animal/<uid>?<attribute>=<newValue> - Edits animal with corresponding uid by the given attribute/value. Returns edited animal
+    /animal/<uid>?<attribute>=<newValue> - Edits animal with corresponding uid by the given attribute/value. Can be done with multiple attributes at a time using ampersands. Returns edited animal
     /animals - Returns all animals
     /animals?start=YYYYMMDD&end=YYYYMMDD - Returns animals created between given dates, inclusive (only one argument is required)
     /delete - Deletes all animals ( murderer!!! >:( ). Returns number of animals deleted
