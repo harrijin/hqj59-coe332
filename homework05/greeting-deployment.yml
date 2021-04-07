@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: greeting-deployment
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            greeting: personalized
+    template:
+        metadata:
+            name: hello
+            labels:
+                greeting: personalized
+        spec:
+            containers:
+              - name: hello
+                image: ubuntu:18.04
+                env:
+                  - name: NAME
+                    value: Harrison
+                  - name: POD_IP
+                    valueFrom:
+                        fieldRef:
+                            fieldPath: status.podIP
+                command: ['sh', '-c', 'echo "Hello, $NAME from IP $POD_IP!" && sleep 3600']
