@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: harrijin-test-redis-deployment
+    labels:
+        username: harrijin
+        env: test
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: harrijin-test-redis
+    template:
+        metadata:
+            labels:
+                username: harrijin
+                env: test
+                app: harrijin-test-redis
+        spec:
+            containers:
+              - name: harrijin-test-redis-pod
+                image: redis:5.0.0
+                volumeMounts:
+                  - name: harrijin-test-redis-data
+                    mountPath: "/data"
+            volumes:
+              - name: harrijin-test-redis-data
+                persistentVolumeClaim: 
+                    claimName: harrijin-test-redis-data

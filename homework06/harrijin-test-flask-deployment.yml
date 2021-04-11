@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: harrijin-test-flask-deployment
+    labels:
+        username: harrijin
+        env: test
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: harrijin-test-flask
+    template:
+        metadata:
+            labels:
+                username: harrijin
+                env: test
+                app: harrijin-test-flask
+        spec:
+            containers:
+              - name: harrijin-test-flask-pod
+                image: harrijin/flask:latest
+                ports:
+                  - containerPort: 5000
